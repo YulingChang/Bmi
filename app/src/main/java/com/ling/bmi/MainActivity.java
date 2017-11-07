@@ -12,21 +12,26 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String s = new String("abc");
-    View.OnClickListener listener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-        }
-    };
+    /*View.OnClickListener listener = new View.OnClickListener() {*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button bHelp = (Button) findViewById(R.id.b_help);
-        bHelp.setOnClickListener(listener);
+        bHelp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("xxx")
+                        .setMessage("BMI原來的設計是一個用於公眾健康研究的統計工具。")
+                        .setPositiveButton("OK",null)
+                        .show();
+            }
+        });
+                                 }
         //getResources().getString(R.string.app_name);
-    }
+
     public void bmi(View view){
       //  System.out.println("What???");     (快捷 sout+tab)
         Log.d("MainActivity","testing bmi method");
