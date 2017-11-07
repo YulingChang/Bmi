@@ -11,7 +11,7 @@
         android:layout_height="27dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="7dp"
-        android:text="Weight"
+        android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/textView2"
         android:layout_width="72dp"
         android:layout_height="29dp"
-        android:text="Height"
+        android:text="@string/height"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/ed.weight"
@@ -54,20 +54,22 @@
         android:id="@+id/b_bmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate BMI"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/ed.height"
         android:layout_marginTop="8dp"
+        android:onClick="bmi"
+        android:text="@string/calculate_bmi"
+        app:layout_constraintLeft_toLeftOf="@+id/ed.height"
         app:layout_constraintTop_toBottomOf="@+id/ed.height" />
 
     <Button
         android:id="@+id/b_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="INFO"
-        app:layout_constraintTop_toBottomOf="@+id/b_bmi"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/b_bmi" />
+        android:layout_marginTop="8dp"
+        android:onClick="bmi"
+        android:text="@string/info"
+        app:layout_constraintLeft_toLeftOf="@+id/b_bmi"
+        app:layout_constraintTop_toBottomOf="@+id/b_bmi" />
 
 </android.support.constraint.ConstraintLayout>
