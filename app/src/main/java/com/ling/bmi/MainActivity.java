@@ -34,17 +34,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void bmi(View view){
       //  System.out.println("What???");     (快捷 sout+tab)
+
         Log.d("MainActivity","testing bmi method");
         EditText edWeight = (EditText) findViewById(R.id.ed_weight);
         EditText edHeight = (EditText) findViewById(R.id.ed_height);
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight / (height * height);
-        new AlertDialog.Builder(this)
-                .setMessage(getString(R.string.your_bmi_is)+bmi)
-                .setTitle(getString(R.string.the_title))
-                .setPositiveButton(getString(R.string.ok),null)
-                .show();
+        if (bmi<20) {
+            new AlertDialog.Builder(this)
+                    .setMessage(getString(R.string.your_bmi_is) + bmi + "   請多吃點")
+                    .setTitle(getString(R.string.the_title))
+                    .setPositiveButton(getString(R.string.ok), null)
+                    .show();
+        }
+        else
+            new AlertDialog.Builder(this)
+                    .setMessage(getString(R.string.your_bmi_is) + bmi)
+                    .setTitle(getString(R.string.the_title))
+                    .setPositiveButton(getString(R.string.ok), null)
+                    .show();
+
+
 
 
         /*Log.d("MainActivity","Your BMI is:"+bmi);
