@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("xxx")
+                        .setTitle("解釋")
                         .setMessage("BMI原來的設計是一個用於公眾健康研究的統計工具。")
                         .setPositiveButton("OK",null)
                         .show();
@@ -41,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight / (height * height);
+        if(height>3){
+            new AlertDialog.Builder(this)
+                    .setMessage("身高單位應為公尺")
+                    .setTitle("提醒")
+                    .setPositiveButton("ok", null)
+                    .show();
+        }
         if (bmi<20) {
             new AlertDialog.Builder(this)
                     .setMessage(getString(R.string.your_bmi_is) + bmi + "   請多吃點")
@@ -62,5 +69,5 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this,"Your BMI is"+bmi,ToastLENGTH_SHORT)
                 .show();
 */
-    }
-}
+    }}
+
